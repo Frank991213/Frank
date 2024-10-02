@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>會員註冊表單</h2>
+    
+    <form action="/submit" method="POST">
+        <label for="first_name">名字:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">姓氏:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="phone">電話:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="password">會員密碼:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="captcha">數字驗證:</label>
+        <input type="number" id="captcha" name="captcha" required>
+
+        <button type="submit">提交</button>
+    </form>
+
+</body>
+</html>

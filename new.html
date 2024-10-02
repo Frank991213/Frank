@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(44, 62, 80, 0.9);
+            padding: 0 50px;
+            height: 100px;
+        }
+
+        .navbar-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .navbar-list a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-list a:hover {
+            color: #f39c12;
+        }
+
+        .container {
+            display: grid;
+            padding: 50px 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        table {
+            width: 100%;
+            table-layout: auto;
+        }
+
+        .point-color {
+            color: #f39c12;
+            font-size: 14px;
+        }
+
+        h2 {
+            color: #1abc9c;
+        }
+
+        .list {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .list a img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .list a img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: aliceblue;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        /* 標示點樣式 */
+        h3 {
+            cursor: pointer;
+            font-size: 14px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        h3:hover {
+            background-color: #f39c12;
+            transform: scale(1.05);
+        }
+        .new1{
+            padding-left: 60px;
+        }
+        .new2{
+            padding-left: 60px;
+        }
+        .new3{
+            padding-left: 60px;
+        }
+        .new4{
+            padding-left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="../LOGO ( 1 ).jpg" alt="Logo" width="100px" height="100px">
+        </div>
+        <div class="navbar-list">
+            <a href="./home.html"><h1>Home</h1></a>
+            <a href="./news.html"><h1>News</h1></a>
+            <a href="./business.html"><h1>Business</h1></a>
+            <a href="./tickets.html"><h1>Tickets</h1></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <td style="position: relative;">
+                <img src="../地圖.jpg" width="600px" height="600px" alt="Map">
+                <h3 id="point_1" style="position: absolute; top: 100px; left: 100px;" onclick="show(1)">
+                    <strong>新聞地點1</strong>
+                </h3>
+                <h3 id="point_2" style="position: absolute; top: 150px; left: 150px;" onclick="show(2)">
+                    <strong>新聞地點2</strong>
+                </h3>
+                <h3 id="point_3" style="position: absolute; top: 200px; left: 200px;" onclick="show(3)">
+                    <strong>新聞地點3</strong>
+                </h3>
+                <h3 id="point_4" style="position: absolute; top: 250px; left: 250px;" onclick="show(4)">
+                    <strong>新聞地點4</strong>
+                </h3>
+            </td>
+            <td>
+                <div class="new1" style="text-align: center;">
+                    <img src="../新聞1.jpg" width="500px" height="500px" alt="News 1">
+                    <h2 style="margin-top: 10px;">一串文字</h2>
+                </div>
+                <div class="new2" style="display: none; text-align: center;">
+                    <img src="../新聞2.jpg" width="500px" height="500px" alt="News 2">
+                    <h2 style="margin-top: 10px;">一串文字</h2>
+                </div>
+                <div class="new3" style="display: none; text-align: center;">
+                    <img src="../新聞3.jpg" width="500px" height="500px" alt="News 3">
+                    <h2 style="margin-top: 10px;">一串文字</h2>
+                </div>
+                <div class="new4" style="display: none; text-align: center;">
+                    <img src="../新聞4.jpg" width="500px" height="500px" alt="News 4">
+                    <h2 style="margin-top: 10px;">一串文字</h2>
+                </div>
+            </td>
+        </table>
+    </div>
+
+    <div class="list">
+        <a href="https://www.facebook.com"><img src="../facebook.png" alt="Facebook"></a>
+        <a href="https://www.twitter.com"><img src="../twitter.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com"><img src="../youtube.png" alt="YouTube"></a>
+    </div>
+
+    <footer>© 2024 Your Company. All rights reserved.</footer>
+
+    <script>
+        var index = 1;
+        function show(val) {
+            document.getElementsByClassName(`new${val}`)[0].style.display = "block";
+            document.getElementById(`point_${val}`).classList.add("point-color");
+            if (index !== val) {
+                document.getElementsByClassName(`new${index}`)[0].style.display = "none";
+                document.getElementById(`point_${index}`).classList.remove("point-color");
+            }
+            index = val;
+        }
+    </script>
+</body>
+
+</html>

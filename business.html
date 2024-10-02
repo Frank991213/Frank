@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            height: 100px;
+        }
+
+        .navbar-list {
+            display: flex;
+            gap: 40px;
+        }
+
+        .navbar-list a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-list a:hover {
+            color: #f39c12;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ffffff;
+        }
+
+        .carousel {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carousel-slide {
+            padding: 20px 0;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slide h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .carousel-slide button {
+            background-color: #f39c12;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-slide button:hover {
+            background-color: #e67e22;
+        }
+
+        .list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .list a img {
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s;
+        }
+
+        .list a img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="../LOGO ( 1 ).jpg" alt="Logo" width="100px" height="100px">
+        </div>
+        <div class="navbar-list">
+            <a href="./home.html">
+                <h1>Home</h1>
+            </a>
+            <a href="./new.html">
+                <h1>News</h1>
+            </a>
+            <a href="./business.html">
+                <h1>Business</h1>
+            </a>
+            <a href="./tickets.html">
+                <h1>Tickets</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="../照片 ( 1 ).jpg" alt="Image 1">
+                <h2>一大串文字</h2>
+                <button onclick="more()">👇查看更多👇</button>
+            </div>
+            <div class="carousel-slide" style="display: none;">
+                <img src="../照片 ( 1 ).jpg" alt="Image 1">
+                <h2>一大串文字</h2>
+                <img src="../照片 ( 2 ).jpg" alt="Image 2">
+                <h2>一大串文字</h2>
+                <button onclick="some()">👆查看部分👆</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="list">
+        <a href="https://www.facebook.com"><img src="../facebook.png" alt="Facebook"></a>
+        <a href="https://www.twitter.com"><img src="../twitter.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com"><img src="../youtube.png" alt="YouTube"></a>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Company. All rights reserved.
+    </footer>
+
+    <script>
+        var carousel = document.getElementsByClassName("carousel-slide");
+
+        function more() {
+            carousel[1].style.display = "block";
+            carousel[0].style.display = "none";
+        }
+
+        function some() {
+            carousel[0].style.display = "block";
+            carousel[1].style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
